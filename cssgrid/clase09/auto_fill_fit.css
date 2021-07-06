@@ -1,0 +1,13 @@
+.con1 {
+    display: grid;   
+    grid-gap: 20px;
+
+    grid-template-columns: repeat( auto-fill, minmax(100px, 1fr) );
+}
+
+.con2 {
+    display: grid;   
+    grid-gap: 20px;
+
+    grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+}
