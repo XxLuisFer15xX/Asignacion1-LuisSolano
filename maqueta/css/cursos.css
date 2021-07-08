@@ -1,0 +1,113 @@
+.cursos {
+    /* border: 2px solid #000; */
+    margin: 20px;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 360px);
+
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 1716px) {
+    .cursos{
+        grid-template-columns: repeat(3, 360px);
+    }
+}
+@media screen and (max-width: 1300px) {
+    .cursos{
+        grid-template-columns: repeat(2, 360px);
+    }
+}
+
+.curso-item {
+    display: block;
+    color: #000;
+    background: #2f89fc;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+
+.curso-item.item1{
+    background: #fff;
+    margin: 0;
+    padding: 0;
+
+    display: grid;
+    gap: 0px;
+    grid-template-rows: repeat(3, auto);
+}
+.curso-item > img{
+    width: 360px;
+    height: 180px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.curso-item-contenido{
+    text-align: left;
+    padding: 0px 8px 0px 8px;
+    line-height: initial;
+}
+.curso-item-titulo{
+    font-size: 24px;
+}
+.curso-item-descripcion{
+    font-size: 12px;
+    line-height:initial;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+.curso-item-caracteristicas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.curso-item-caracteristicas > span{
+    font-size: 12px;
+    padding: 4px 16px 4px 16px;
+    background-color: #B5F0BE;
+    border-radius: 10px;
+}
+.calificacion{
+    width: 116px;
+    display: flex;
+    gap: 4px;
+}
+
+.curso-item-footer{
+    background-color: #5D7AC6;
+    color: #fff;
+    padding: 4px 8px 4px 8px;
+    border-radius: 0px 0px 10px 10px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    line-height: initial;
+}
+.curso-item-footer > div{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.curso-item-footer > div > img{
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+}
+.curso-item-footer > div > span{
+    font-size: 14px;
+}
+.curso-item-footer span{
+    font-size: 14px;
+}
+.curso-item-footer:nth-child(2){
+    justify-self: start;
+}
