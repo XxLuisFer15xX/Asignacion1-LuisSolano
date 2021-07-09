@@ -1,0 +1,130 @@
+.curso_detalles{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 24px;
+}
+.curso_detalles_encabezado{
+    display: flex;
+    gap: 24px;
+    height: auto;
+
+    flex-wrap: nowrap;
+    align-items: stretch;
+}
+
+
+
+.curso_imagen{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.curso_imagen > img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.curso_detalle{
+    background-color: #FBFDDD;
+    color: #000;
+    min-width: 380px;
+    max-width: 426px;
+    padding: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.detalles_encabezado{
+    text-align: center;
+    font-weight: bold;
+    font-size: 36px;
+}
+.detalles_cuerpo{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid;
+    font-size: 18px;
+}
+.detalles_cuerpo > div > span{
+    font-weight: bold;
+}
+.detalles_titulo{
+    text-align: center;
+}
+.detalles_lanzamiento{
+    display: flex;
+    gap: 8px;
+}
+.detalles_clasificacion{
+    display: flex;
+    gap: 8px;
+}
+.detalles_duracion{
+    display: flex;
+    gap: 8px;
+}
+.detalles_nivel{
+    display: flex;
+    gap: 8px;
+}
+/* .detalles_descripcion{
+
+}
+.detalles_palabras{
+
+} */
+.detalles_calificacion{
+    display: flex;
+    gap: 8px;
+}
+
+.curso_descripcion{
+    background-color: #fff;
+    color: #000;
+    padding: 12px;
+
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+.descripcion_titulo{
+    font-size: 36px;
+    font-weight: bold;
+}
+.descripcion_cuerpo{
+    font-size: 18px;
+}
+
+
+
+
+@media screen and (max-width:1500px) {
+    .curso_detalles_encabezado{
+        height: auto;
+    }
+    .curso_detalle{
+        max-width: 450px;
+    }
+    
+}
+@media screen and (max-width:1400px) {
+    .curso_detalles_encabezado{
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+    }
+    .curso_detalle{
+        max-width: none;
+    }
+    .curso_detalles{
+        height: auto;
+    }
+}

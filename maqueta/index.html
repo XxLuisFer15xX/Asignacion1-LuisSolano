@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/slider.css">
-    <link rel="stylesheet" href="./css/busqueda.css">
-    <link rel="stylesheet" href="./css/cursos.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/elementos.css">
+
+    <link rel="stylesheet" href="./css/landing/slider.css">
+    <link rel="stylesheet" href="./css/landing/busqueda.css">
+    <link rel="stylesheet" href="./css/landing/cursos.css">
+
     <title>AppLand School</title>
   </head>
   <body>
@@ -18,13 +21,15 @@
         <img src="/maqueta/images/appland-logo.jpg" alt="" />
         <h2>Appland School</h2>
       </div>
-      <div class="perfil">
+      <div class="menu">
         <button class="btn btn-primary" onclick="">Iniciar Sesión</button>
+        <button hidden class="btn btn-primary" onclick="">Cerrar Sesión</button>
+        <img src="/maqueta/images/user.jpg" alt="perfil" />
       </div>
     </header>
 
-    <div class="contenedor">
-      <main class="body">
+    <main class="body">
+      <div class="contenedor">
         
         <div class="contenedor-slider">
           <h3 class="slider-titulo">Aprende a desarrollar con Appland School</h3>
@@ -60,25 +65,27 @@
         <div class="busqueda">
           <h4 class="busqueda-titulo">Cursos</h4>
 
-          <div class="busqueda-ordenar">
-            <select id="ordenar" name="cursos">
-              <option value="default">Ordenar calificacion</option>
-              <option value="mayor">Mayor a menor</option>
-              <option value="menor">Menor a mayor</option>
-            </select>
-          </div>
-
-          <div class="busqueda-filtrar">
-            <select id="filtrar" name="cursos">
-              <option value="default">Filtrar por</option>
-              <option value="nombre">Nombre</option>
-              <option value="categoria">Categoria</option>
-              <option value="palabrasClaves">Palabras Claves</option>
-            </select>
-          </div>
-
-          <div class="busqueda-buscar">
-            <input type="text" name="cursos" id="buscar">
+          <div class="busqueda-acciones">
+            <div class="busqueda-ordenar">
+              <select class="combobox" id="ordenar" name="cursos">
+                <option value="default">Ordenar calificacion</option>
+                <option value="mayor">Mayor a menor</option>
+                <option value="menor">Menor a mayor</option>
+              </select>
+            </div>
+  
+            <div class="busqueda-filtrar">
+              <select class="combobox" id="filtrar" name="cursos">
+                <option value="default">Filtrar por</option>
+                <option value="nombre">Nombre</option>
+                <option value="categoria">Categoria</option>
+                <option value="palabrasClaves">Palabras Claves</option>
+              </select>
+            </div>
+  
+            <div class="busqueda-buscar">
+              <input class="textbox" type="text" name="cursos" id="buscar">
+            </div>
           </div>
         </div>
 
@@ -121,9 +128,8 @@
           <div class="curso-item">11</div>
         </div>
         
-
-      </main>
-    </div>
+      </div>
+    </main>
 
     <footer class="footer">
       <h4>© APPLAND | Diseñador Web: Luis Solano | Derechos reservados</h4>

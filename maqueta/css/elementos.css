@@ -1,0 +1,48 @@
+.btn {
+    height: 40px;
+    padding: 0px 12px 0px 12px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    background-color: red;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.25);
+}
+.btn.btn-primary{
+    background-color: #772ffc;
+    color: #fff;
+    font-style: bold;
+}
+.btn:hover{
+    cursor: pointer;
+}
+.btn:active{
+    background-color: #631ee2;
+    box-shadow: none;
+}
+
+.textbox{
+    height: 40px;
+    box-sizing:border-box;
+    padding: 10px;
+    box-shadow: 2px 2px 4px rgba(0,0,255,0.25);
+}
+.combobox{
+    
+}
+
+
+.calificacion{
+    width: 116px;
+    display: flex;
+    gap: 4px;
+}
+
+.icon-social:hover{
+    cursor: pointer;
+}
+.icon-social:active{
+    outline: 1px solid blue;
+}
+hr{
+    background-color: #000;
+}

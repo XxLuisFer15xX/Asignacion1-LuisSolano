@@ -1,5 +1,5 @@
 .cursos {
-    border: 2px solid #000;
+    /* border: 2px solid #000; */
     margin: 20px;
     font-size: 50px;
     line-height: 50px;
@@ -21,7 +21,11 @@
         grid-template-columns: repeat(2, 360px);
     }
 }
-
+@media screen and (max-width: 880px) {
+    .cursos{
+        grid-template-columns: repeat(1, 360px);
+    }
+}
 .curso-item {
     display: block;
     color: #000;
@@ -73,11 +77,6 @@
     padding: 4px 16px 4px 16px;
     background-color: #B5F0BE;
     border-radius: 10px;
-}
-.calificacion{
-    width: 116px;
-    display: flex;
-    gap: 4px;
 }
 
 .curso-item-footer{
