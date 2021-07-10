@@ -1,0 +1,47 @@
+.curso_comentarios{
+    padding: 24px;
+    background-color: #DEFCE7;
+    color: #000;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.comentarios_titulo{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.comentarios_comentarios{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.comentarios_comentario{
+    display: flex;
+    gap: 32px;
+}
+.comentarios_comentario > img{
+    width: 78px;
+    height: 78px;
+    border-radius: 39px;
+}
+.comentarios_caja{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid;
+    padding: 8px;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+}
+
+
+
+.comentarios_comentar{
+    display: flex;
+    justify-content: flex-end;
+}

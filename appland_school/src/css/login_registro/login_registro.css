@@ -1,0 +1,68 @@
+.body-2{
+    height: 87vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.login_registro{
+    background-color: white;
+    color: black;
+    width: 360px;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+.login_registro > div{
+    align-self: stretch;
+}
+
+.login_registro > form{
+    margin: 20px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: stretch;
+}
+.login_registro > span{
+    align-self: flex-start;
+}
+.redes-sociales{
+    margin-bottom: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+@media screen and (max-height: 800px) {
+    .body-2{
+        height: 85vh;
+    }
+}
+@media screen and (max-height: 740px) {
+    .body-2{
+        height: 80vh;
+    }
+    .login_registro{
+        gap: 10px;
+    }
+    .login_registro > form{
+        margin: 10px 0px 20px 0px;
+    }
+    .redes-sociales{
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-height: 700px) {
+    .body-2{
+        height: auto;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+

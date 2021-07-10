@@ -1,26 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 
-function App() {
+import { Header } from './components/Componentes_principales/Header'
+import { Main } from './components/Componentes_principales/Main';
+import { Footer } from './components/Componentes_principales/Footer';
+
+import "./css/index.css";
+import "./css/elementos.css";
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Appland School</h1>
-        <p>
-          Cursos online de Appland
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
+  )
 }
-
-export default App;
