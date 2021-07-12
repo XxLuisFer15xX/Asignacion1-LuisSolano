@@ -24,7 +24,7 @@ export const RegistroScreen = () => {
           <img class="icon-social" src="../images/icons/Facebook.svg" alt="" />
         </div>
         <span>
-          <a href="">Ya tienes cuenta?</a>
+          <a href="login">Ya tienes cuenta?</a>
         </span>
       </div>
 
