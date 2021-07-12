@@ -21,7 +21,7 @@ export const LoginScreen = () => {
             <img className="icon-social" src="../images/icons/Facebook.svg" alt="" />
           </div>
           <span>
-            <a href="">¿No tienes cuenta aún?</a>
+            <a href="#">¿No tienes cuenta aún?</a>
           </span>
         </div>
       </main>

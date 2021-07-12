@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Header } from "../components/Componentes_principales/Header";
-import { LoginScreen } from "../components/Login_Registro/LoginScreen";
-import { RegistroScreen } from "../components/Login_Registro/RegisterScreen";
-import { Main } from "../components/Componentes_principales/Main";
+import { Header } from "../components/componentes_principales/Header";
+import { LoginScreen } from "../components/login_registro/LoginScreen";
+import { RegistroScreen } from "../components/login_registro/RegisterScreen";
+import { Main } from "../components/componentes_principales/Main";
 
 export const AppRouters = () => {
   return (
