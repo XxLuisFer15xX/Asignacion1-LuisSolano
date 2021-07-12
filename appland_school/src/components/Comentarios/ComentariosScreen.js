@@ -1,9 +1,9 @@
 import React from 'react'
 
-export const Registro = () => {
+export const ComentariosScreen = () => {
     return (
         <div>
-            Registro
+            ComentariosScreen
         </div>
     )
 }

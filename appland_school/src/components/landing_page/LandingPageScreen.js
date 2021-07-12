@@ -8,14 +8,12 @@ import "../../css/landing/slider.css";
 import "../../css/landing/busqueda.css";
 import "../../css/landing/cursos.css";
 
-export const LandingPage = () => {
+export const LandingPageScreen = () => {
   return (
-    <main className="body">
-      <div className="contenedor">
-        <Slider />
-        <Buscador />
-        <Cursos />
-      </div>
-    </main>
+    <>
+      <Slider />
+      <Buscador />
+      <Cursos />
+    </>
   );
 };

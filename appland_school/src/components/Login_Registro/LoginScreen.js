@@ -2,7 +2,7 @@ import React from 'react'
 
 import "../../css/login_registro/login_registro.css";
 
-export const Login = () => {
+export const LoginScreen = () => {
     return (
       <main className="body-2">
         <div className="login_registro">

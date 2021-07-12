@@ -36,6 +36,10 @@
     display: flex;
     gap: 4px;
 }
+.calificacion > img .icon-social:hover,
+.calificacion > img:hover{
+    cursor: pointer;
+}
 
 .icon-social:hover{
     cursor: pointer;

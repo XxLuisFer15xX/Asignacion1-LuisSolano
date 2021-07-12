@@ -1,11 +1,12 @@
-import React from 'react'
-
-import { LandingPage } from '../landing_page/LandingPage'
-import { Login } from '../Login_Registro/Login'
+import React from "react";
+import { DashboardRouter } from "../../routers/DashboardRouter";
 
 export const Main = () => {
-    return (
-      <LandingPage />
-      
-    )
-}
+  return (
+    <main className="body">
+      <div className="contenedor">
+        <DashboardRouter />
+      </div>
+    </main>
+  );
+};
