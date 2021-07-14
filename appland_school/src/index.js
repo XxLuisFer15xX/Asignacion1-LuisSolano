@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { App } from './App';
+import { ApplandSchool } from './ApplandSchool';
 
 ReactDOM.render(
-  <App />,
+  <ApplandSchool />,
   document.getElementById('root')
 );

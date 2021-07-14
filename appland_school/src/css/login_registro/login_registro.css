@@ -33,6 +33,13 @@
 .login_registro > span{
     align-self: flex-start;
 }
+.login_registro > span > p{
+    color: rgb(4, 137, 246);
+}
+.login_registro > span > p:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
 .redes-sociales{
     margin-bottom: 40px;
     display: flex;

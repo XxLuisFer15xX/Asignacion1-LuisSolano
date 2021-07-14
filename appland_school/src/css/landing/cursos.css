@@ -111,3 +111,7 @@
 .curso-item-footer:nth-child(2){
     justify-self: start;
 }
+
+.curso-item-caracteristicas .calificacion img:hover{
+    cursor: auto;
+}

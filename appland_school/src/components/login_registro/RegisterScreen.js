@@ -1,33 +1,72 @@
-import React from 'react'
+import React from "react";
+import { useHistory } from "react-router-dom";
 
 import "../../css/login_registro/login_registro.css";
 
 export const RegistroScreen = () => {
-    return (
-      <main class="body-2">
+  let history = useHistory();
 
-      <div class="login_registro">
-        <div class="">
+  const handleLogin = () => {
+    history.replace("/login");
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    history.replace("/");
+  };
+  const handleGoogle = () => {
+    
+    history.replace("/");
+  };
+  const handleFacebook = () => {
+    
+    history.replace("/");
+  };
+  return (
+    <main className="body-2">
+      <div className="login_registro">
+        <div className="">
           <h1>Registrate</h1>
           <hr />
         </div>
-        <form action="">
-          <input class="textbox" type="text" placeholder="Nombre Completo" />
-          <input class="textbox" type="text" placeholder="Correo electrónico" />
-          <input class="textbox" type="text" placeholder="Contraseña" />
-          <input class="textbox" type="text" placeholder="Confirmar contraseña" />
-          <button class="btn btn-primary">Ingresar</button>
+        <form action="" onSubmit={handleSubmit}>
+          <input
+            className="textbox"
+            type="text"
+            placeholder="Nombre Completo"
+          />
+          <input
+            className="textbox"
+            type="text"
+            placeholder="Correo electrónico"
+          />
+          <input className="textbox" type="text" placeholder="Contraseña" />
+          <input
+            className="textbox"
+            type="text"
+            placeholder="Confirmar contraseña"
+          />
+          <button className="btn btn-primary">Ingresar</button>
         </form>
         <h3>Registrate con:</h3>
-        <div class="redes-sociales">
-          <img class="icon-social" src="../images/icons/Google.svg" alt="" />
-          <img class="icon-social" src="../images/icons/Facebook.svg" alt="" />
+        <div className="redes-sociales">
+          <img
+            className="icon-social"
+            src={`./assets/icons/Google.svg`}
+            alt=""
+            onClick={handleGoogle}
+          />
+          <img
+            className="icon-social"
+            src={`./assets/icons/Facebook.svg`}
+            alt=""
+            onClick={handleFacebook}
+          />
         </div>
         <span>
-          <a href="login">Ya tienes cuenta?</a>
+          <p onClick={handleLogin}>Ya tienes cuenta?</p>
         </span>
       </div>
-
     </main>
-    )
-}
+  );
+};

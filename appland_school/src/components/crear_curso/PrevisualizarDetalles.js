@@ -3,39 +3,39 @@ import React from "react";
 export const PrevisualizarDetalles = () => {
   return (
     <>
-      <div class="curso_detalles">
-        <div class="curso_detalles_encabezado">
-          <div class="curso_imagen">
+      <div className="curso_detalles">
+        <div className="curso_detalles_encabezado">
+          <div className="curso_imagen">
             <img src={`./assets/images/Subir_img.png`} alt="" />
-            <button class="btn btn-primary">Subir una imagen</button>
+            <button className="btn btn-primary">Subir una imagen</button>
           </div>
 
-          <div class="curso_detalle">
-            <div class="detalles_encabezado">
+          <div className="curso_detalle">
+            <div className="detalles_encabezado">
               <span>Detalles</span>
               <hr />
             </div>
-            <div class="detalles_cuerpo">
-              <div class="detalles_titulo">
+            <div className="detalles_cuerpo">
+              <div className="detalles_titulo">
                 <span>Curso de Firebase</span>
               </div>
-              <div class="detalles_lanzamiento">
+              <div className="detalles_lanzamiento">
                 <span>Lanzamiento:</span>
                 <p>05 de julio de 2021</p>
               </div>
-              <div class="detalles_clasificacion">
+              <div className="detalles_clasificacion">
                 <span>Clasificación:</span>
                 <p>Especialidad</p>
               </div>
-              <div class="detalles_duracion">
+              <div className="detalles_duracion">
                 <span>Duración:</span>
                 <p>5 horas</p>
               </div>
-              <div class="detalles_nivel">
+              <div className="detalles_nivel">
                 <span>Nivel:</span>
                 <p>básico</p>
               </div>
-              <div class="detalles_descripcion">
+              <div className="detalles_descripcion">
                 <span>Descripcion:</span>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
@@ -46,13 +46,13 @@ export const PrevisualizarDetalles = () => {
                   totam.
                 </p>
               </div>
-              <div class="detalles_palabras">
+              <div className="detalles_palabras">
                 <span>Palabras claves:</span>
                 <p>Lorem, ipsum dolor.</p>
               </div>
-              <div class="detalles_calificacion">
+              <div className="detalles_calificacion">
                 <span>Calificación</span>
-                <div class="calificacion">
+                <div className="calificacion">
                   <img src={`./assets/icons/star-filled.svg`} alt="" />
                   <img src={`./assets/icons/star-filled.svg`} alt="" />
                   <img src={`./assets/icons/star-filled.svg`} alt="" />
@@ -64,12 +64,12 @@ export const PrevisualizarDetalles = () => {
           </div>
         </div>
 
-        <div class="curso_descripcion">
-          <div class="descripcion_titulo">
+        <div className="curso_descripcion">
+          <div className="descripcion_titulo">
             <span>Descripcion</span>
             <hr />
           </div>
-          <div class="descripcion_cuerpo">
+          <div className="descripcion_cuerpo">
             <p>
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Excepturi ad quod explicabo quasi repellendus quaerat illo
