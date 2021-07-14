@@ -3,14 +3,12 @@ import { types } from "../types/types";
 
 export const startGoogleLogin = () => {
     return ( dispatch ) => {
-        console.log('hola')
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
-                console.log(user)
-                /* dispatch(
+                dispatch(
                     login( user.uid, user.displayName )
-                ) */
+                )
             });
 
     }
