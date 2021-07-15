@@ -25,6 +25,8 @@ export const Comentarios = () => {
             comentarios.map(comentario => {
               if(comentario.idCurso === curso.id){
                 return <Comentario key={comentario.id} comentario={comentario} />
+              }else{
+                return null;
               }
             })
           }
