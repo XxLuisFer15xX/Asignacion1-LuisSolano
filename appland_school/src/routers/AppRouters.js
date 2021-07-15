@@ -8,9 +8,9 @@ import { LoginScreen } from "../components/login_registro/LoginScreen";
 import { RegistroScreen } from "../components/login_registro/RegisterScreen";
 import { Main } from "../components/componentes_principales/Main";
 
-import {firebase} from "../database/firebase";
+import {firebase} from "../config/firebaseConfig";
 import { useDispatch } from 'react-redux'
-import { login } from "../actions/auth";
+import { login } from "../Redux/actions/auth";
 
 export const AppRouters = () => {
   const dispatch = useDispatch();
@@ -21,7 +21,6 @@ export const AppRouters = () => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged( (user) => {
       if(user?.uid){
-        console.log(user)
         dispatch( login( user.uid, user.displayName, user.photoURL) );
         setIsLoggedIn(true);
       }else{

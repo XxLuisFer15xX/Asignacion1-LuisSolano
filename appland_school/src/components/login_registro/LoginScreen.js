@@ -1,9 +1,10 @@
 import React from "react";
-import { useDispatch } from "react-redux"
 import { useHistory } from "react-router-dom";
 
+import { useDispatch } from "react-redux"
+import { startGoogleLogin } from "../../Redux/actions/auth";
+
 import "../../css/login_registro/login_registro.css";
-import { startGoogleLogin } from "../../actions/auth";
 
 export const LoginScreen = () => {
   let history = useHistory();

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
+
 import { CrearCrusoScreen } from "../components/crear_curso/CrearCrusoScreen";
 import { DetallesScreen } from "../components/detalles_curso/DetallesScreen";
 import { LandingPageScreen } from "../components/landing_page/LandingPageScreen";
