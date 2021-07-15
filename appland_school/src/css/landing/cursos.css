@@ -49,6 +49,9 @@
     height: 180px;
     border-radius: 10px 10px 0px 0px;
 }
+.curso-item > img:hover{
+    cursor: pointer;
+}
 
 .curso-item-contenido{
     text-align: left;

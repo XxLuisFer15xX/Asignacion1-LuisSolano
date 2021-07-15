@@ -1,13 +1,49 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 export const Detalles = () => {
+  const { cursos } = useSelector((state) => state.cursos);
+  let history = useHistory();
+  let id = history.location.pathname.split("/")[2];
+
+  const {
+    titulo,
+    image,
+    lanzamiento,
+    clasificacion,
+    duracion,
+    Nivel,
+    descripcionC,
+    descripcionL,
+    palabrasClaves,
+    calificacion,
+  } = cursos.find((curso) => curso.id === id);
+
+  let rowsCalification = [];
+  for (let i = 0; i < calificacion; i++) {
+    rowsCalification.push(
+      <img key={i} src={`./assets/icons/star-filled.svg`} alt="" />
+    );
+  }
+  for (let i = calificacion; i < 5; i++) {
+    rowsCalification.push(
+      <img key={i} src={`./assets/icons/star-empty.svg`} alt="" />
+    );
+  }
+
+  const handlePrevisualizar = () =>{
+    history.push(`${id}/previsualizar`)
+  }
+
   return (
     <>
-      <div className="curso_detalles">
+      <div className="curso_detalles" id={id}>
         <div className="curso_detalles_encabezado">
           <div className="curso_imagen">
-            <img src={`./assets/images/firebase.png`} alt="" />
-            <button className="btn btn-primary">Previsualizar</button>
+            <img src={`${image}`} alt="" />
+            <button className="btn btn-primary" onClick={handlePrevisualizar}>Previsualizar</button>
           </div>
 
           <div className="curso_detalle">
@@ -17,48 +53,35 @@ export const Detalles = () => {
             </div>
             <div className="detalles_cuerpo">
               <div className="detalles_titulo">
-                <span>Curso de Firebase</span>
+                <span>{titulo}</span>
               </div>
               <div className="detalles_lanzamiento">
                 <span>Lanzamiento:</span>
-                <p>05 de julio de 2021</p>
+                <p>{lanzamiento}</p>
               </div>
               <div className="detalles_clasificacion">
                 <span>Clasificación:</span>
-                <p>Especialidad</p>
+                <p>{clasificacion}</p>
               </div>
               <div className="detalles_duracion">
                 <span>Duración:</span>
-                <p>5 horas</p>
+                <p>{duracion}</p>
               </div>
               <div className="detalles_nivel">
                 <span>Nivel:</span>
-                <p>básico</p>
+                <p>{Nivel}</p>
               </div>
               <div className="detalles_descripcion">
                 <span>Descripcion:</span>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odit
-                  unde recusandae ex ipsam asperiores totam aut suscipit in
-                  nihil cum doloremque dignissimos, sint reprehenderit
-                  temporibus iure officiis, tempora, esse maiores perferendis
-                  cupiditate dolore? Ex non, debitis incidunt nesciunt accusamus
-                  totam.
-                </p>
+                <p>{descripcionC}</p>
               </div>
               <div className="detalles_palabras">
                 <span>Palabras claves:</span>
-                <p>Lorem, ipsum dolor.</p>
+                <p>{palabrasClaves}</p>
               </div>
               <div className="detalles_calificacion">
                 <span>Calificación</span>
-                <div className="calificacion">
-                  <img src={`./assets/icons/star-filled.svg`} alt="" />
-                  <img src={`./assets/icons/star-filled.svg`} alt="" />
-                  <img src={`./assets/icons/star-filled.svg`} alt="" />
-                  <img src={`./assets/icons/star-filled.svg`} alt="" />
-                  <img src={`./assets/icons/star-empty.svg`} alt="" />
-                </div>
+                <div className="calificacion">{rowsCalification}</div>
               </div>
             </div>
           </div>
@@ -70,15 +93,7 @@ export const Detalles = () => {
             <hr />
           </div>
           <div className="descripcion_cuerpo">
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Excepturi ad quod explicabo quasi repellendus quaerat illo
-              laudantium. Id magni molestiae reprehenderit quasi natus sint
-              explicabo. Commodi quod nisi sapiente repudiandae porro debitis
-              eos blanditiis maxime nulla consequatur praesentium placeat illum
-              quia excepturi, atque nesciunt explicabo nostrum esse harum
-              doloribus! At.
-            </p>
+            <p>{descripcionL}</p>
           </div>
         </div>
       </div>
