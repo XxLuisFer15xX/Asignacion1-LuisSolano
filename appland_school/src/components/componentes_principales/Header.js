@@ -1,15 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { startLogout } from "../../actions/auth";
 
 export const Header = ( ) => {
   let history = useHistory();
   const dispatch = useDispatch();
-  const user = {
-    logged: true,
-    name: 'Luis'
-  }
+  const state = useSelector(state => state?.auth)
 
   const handleHome = () => {
     history.replace('/');
@@ -38,7 +35,7 @@ export const Header = ( ) => {
         <h2 onClick={handleHome}>Appland School</h2>
       </div>
       <div className="menu">
-        { !user.name
+        { !state?.name
           ? <>
             <button className="btn btn-primary" onClick={handleLogin}>
               Iniciar Sesión
@@ -54,11 +51,11 @@ export const Header = ( ) => {
             <button className="btn btn-primary"  onClick={handleLogout}>
             Cerrar Sesión
             </button>
-            <p>{user.name}</p></>
+            <p>{state?.name}</p></>
         }
-        <img src={ !user.name
+        <img src={ !state?.name
           ?`./assets/images/user.jpg`
-          :`./assets/images/perfil.jpg`
+          :`${state?.photo}`
         } alt="perfil" />
       </div>
     </header>

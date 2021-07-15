@@ -21,7 +21,8 @@ export const AppRouters = () => {
   useEffect(() => {
     firebase.auth().onAuthStateChanged( (user) => {
       if(user?.uid){
-        dispatch( login( user.uid, user.displayName) );
+        console.log(user)
+        dispatch( login( user.uid, user.displayName, user.photoURL) );
         setIsLoggedIn(true);
       }else{
         setIsLoggedIn(false);
@@ -31,9 +32,9 @@ export const AppRouters = () => {
   }, [dispatch, setCheking])
 
   if( cheking ){
-    /* return (
+    return (
       <h1>Espere...</h1>
-    ) */
+    )
   }
   return (
     <Router>

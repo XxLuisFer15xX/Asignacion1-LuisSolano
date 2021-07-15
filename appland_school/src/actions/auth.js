@@ -6,19 +6,21 @@ export const startGoogleLogin = () => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
             .then( ({ user }) => {
+                console.log(user.photoURL);
                 dispatch(
-                    login( user.uid, user.displayName )
+                    login( user.uid, user.displayName, user.photoURL )
                 )
             });
 
     }
 }
 
-export const login = (uid, displayName) => ({
+export const login = (uid, displayName, photo) => ({
     type: types.login,
     payload: {
         uid,
-        displayName
+        displayName,
+        photo
     }
 });
 

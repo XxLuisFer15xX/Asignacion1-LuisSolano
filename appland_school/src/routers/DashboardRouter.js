@@ -6,20 +6,19 @@ import { LandingPageScreen } from "../components/landing_page/LandingPageScreen"
 import { PrevisualizarScreen } from "../components/previsualizar/PrevisualizarScreen";
 import { PrivateRoute } from "./PrivateRoute";
 
-import {firebase} from "../database/firebase";
+import { useSelector } from "react-redux";
 
 export const DashboardRouter = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const state = useSelector(state => state?.auth)
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged( (user) => {
-      if(user?.uid){
-        setIsLoggedIn(true);
-      }else{
-        setIsLoggedIn(false);
-      }
-    })
-  }, [])
+    if(state?.uid){
+      setIsLoggedIn(true);
+    }else{
+      setIsLoggedIn(false);
+    }
+  }, [state])
 
   return (
     <Switch>
