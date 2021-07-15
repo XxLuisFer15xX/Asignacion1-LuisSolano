@@ -1,15 +1,26 @@
-import React, { useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect, Route, Switch } from "react-router-dom";
-import { AuthContext } from "../auth/AuthContext";
 import { CrearCrusoScreen } from "../components/crear_curso/CrearCrusoScreen";
 import { DetallesScreen } from "../components/detalles_curso/DetallesScreen";
 import { LandingPageScreen } from "../components/landing_page/LandingPageScreen";
 import { PrevisualizarScreen } from "../components/previsualizar/PrevisualizarScreen";
 import { PrivateRoute } from "./PrivateRoute";
 
+import {firebase} from "../database/firebase";
 
 export const DashboardRouter = () => {
-  const {user} = useContext(AuthContext);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged( (user) => {
+      if(user?.uid){
+        setIsLoggedIn(true);
+      }else{
+        setIsLoggedIn(false);
+      }
+    })
+  }, [])
+
   return (
     <Switch>
       <Route exact path="/cursos" component={LandingPageScreen} />
@@ -19,7 +30,7 @@ export const DashboardRouter = () => {
         exact 
         path="/crear"
         component={CrearCrusoScreen}
-        isAuthenticated={user.logged}
+        isAuthenticated={isLoggedIn}
       />
 
       <Redirect to="/cursos" />

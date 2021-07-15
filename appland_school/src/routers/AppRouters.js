@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { PublicRoute } from "./PublicRoute";
@@ -8,12 +8,33 @@ import { LoginScreen } from "../components/login_registro/LoginScreen";
 import { RegistroScreen } from "../components/login_registro/RegisterScreen";
 import { Main } from "../components/componentes_principales/Main";
 
-export const AppRouters = () => {
-  
-  const user = {
-    logged: false
-  }
+import {firebase} from "../database/firebase";
+import { useDispatch } from 'react-redux'
+import { login } from "../actions/auth";
 
+export const AppRouters = () => {
+  const dispatch = useDispatch();
+
+  const [cheking, setCheking] = useState(true)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged( (user) => {
+      if(user?.uid){
+        dispatch( login( user.uid, user.displayName) );
+        setIsLoggedIn(true);
+      }else{
+        setIsLoggedIn(false);
+      }
+      setCheking(false);
+    })
+  }, [dispatch, setCheking])
+
+  if( cheking ){
+    /* return (
+      <h1>Espere...</h1>
+    ) */
+  }
   return (
     <Router>
       <Header />
@@ -25,15 +46,15 @@ export const AppRouters = () => {
           exact 
           path="/login" 
           component={LoginScreen}
-          isAuthenticated={user.logged}
+          isAuthenticated={isLoggedIn}
         />
         <PublicRoute
           exact 
           path="/register" 
           component={RegistroScreen}
-          isAuthenticated={user.logged}
+          isAuthenticated={isLoggedIn}
         />
-        <Route path="/" component={Main} />
+        <Route path="/" component={Main} isAuthenticated={isLoggedIn} saludo="hola" />
       </Switch>
     </Router>
   );

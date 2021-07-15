@@ -20,6 +20,7 @@ export const LoginScreen = () => {
   };
   const handleGoogle = () => {
     dispatch( startGoogleLogin() );
+    console.log( );
   };
   const handleFacebook = () => {
     

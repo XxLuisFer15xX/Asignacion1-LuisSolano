@@ -1,11 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { startLogout } from "../../actions/auth";
 
 export const Header = ( ) => {
   let history = useHistory();
+  const dispatch = useDispatch();
   const user = {
-    logged: false,
-    name: null
+    logged: true,
+    name: 'Luis'
   }
 
   const handleHome = () => {
@@ -17,9 +20,7 @@ export const Header = ( ) => {
   }
 
   const handleLogout = () => {
-    /* dispatch({
-      type: types.logout
-    }) */
+    dispatch( startLogout() )
   }
 
   const handleCrear = () => {

@@ -3,16 +3,16 @@ import React from "react";
 export const Comentarios = () => {
   return (
     <>
-      <div class="curso_comentarios">
-        <div class="comentarios_titulo">
+      <div className="curso_comentarios">
+        <div className="comentarios_titulo">
           <span>Comentarios</span>
           <hr />
         </div>
 
-        <div class="comentarios_comentarios">
-          <div class="comentarios_comentario">
+        <div className="comentarios_comentarios">
+          <div className="comentarios_comentario">
             <img src={`./assets/images/perfil.jpg`} alt="" />
-            <div class="comentarios_caja">
+            <div className="comentarios_caja">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Reiciendis aliquid expedita esse non distinctio beatae autem rem
@@ -27,7 +27,7 @@ export const Comentarios = () => {
                 quia quasi vel, accusamus eum doloremque velit autem quaerat
                 quis cumque culpa est?
               </p>
-              <div class="calificacion">
+              <div className="calificacion">
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
@@ -37,9 +37,9 @@ export const Comentarios = () => {
             </div>
           </div>
 
-          <div class="comentarios_comentario">
+          <div className="comentarios_comentario">
             <img src={`./assets/images/perfil.jpg`} alt="" />
-            <div class="comentarios_caja">
+            <div className="comentarios_caja">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Reiciendis aliquid expedita esse non distinctio beatae autem rem
@@ -54,7 +54,7 @@ export const Comentarios = () => {
                 quia quasi vel, accusamus eum doloremque velit autem quaerat
                 quis cumque culpa est?
               </p>
-              <div class="calificacion">
+              <div className="calificacion">
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
@@ -64,9 +64,9 @@ export const Comentarios = () => {
             </div>
           </div>
 
-          <div class="comentarios_comentario">
+          <div className="comentarios_comentario">
             <img src={`./assets/images/perfil.jpg`} alt="" />
-            <div class="comentarios_caja">
+            <div className="comentarios_caja">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Reiciendis aliquid expedita esse non distinctio beatae autem rem
@@ -81,7 +81,7 @@ export const Comentarios = () => {
                 quia quasi vel, accusamus eum doloremque velit autem quaerat
                 quis cumque culpa est?
               </p>
-              <div class="calificacion">
+              <div className="calificacion">
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
                 <img src={`./assets/icons/star-filled.svg`} alt="" />
@@ -94,11 +94,11 @@ export const Comentarios = () => {
 
         <hr />
 
-        <div class="comentarios_comentario">
+        <div className="comentarios_comentario">
           <img src={`./assets/images/perfil.jpg`} alt="" />
-          <div class="comentarios_caja">
-            <input class="textbox" type="text" />
-            <div class="calificacion">
+          <div className="comentarios_caja">
+            <input className="textbox" type="text" />
+            <div className="calificacion">
               <img src={`./assets/icons/star-filled.svg`} alt="" />
               <img src={`./assets/icons/star-filled.svg`} alt="" />
               <img src={`./assets/icons/star-filled.svg`} alt="" />
@@ -108,8 +108,8 @@ export const Comentarios = () => {
           </div>
         </div>
 
-        <div class="comentarios_comentar">
-          <button class="btn btn-primary">Calificar</button>
+        <div className="comentarios_comentar">
+          <button className="btn btn-primary">Calificar</button>
         </div>
       </div>
     </>
