@@ -2,6 +2,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 
 import { authReducer } from '../reducers/authReducer';
+import { buscadorReducer } from '../reducers/buscardorReducer';
 import { comentariosReducer } from '../reducers/comentariosReducer';
 import { cursosReducer } from '../reducers/cursosReducer';
 
@@ -10,7 +11,8 @@ const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOO
 const reducers = combineReducers({
     auth: authReducer,
     cursos: cursosReducer,
-    comentarios: comentariosReducer
+    comentarios: comentariosReducer,
+    buscador: buscadorReducer,
 });
 
 

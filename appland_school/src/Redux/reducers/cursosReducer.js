@@ -75,7 +75,7 @@ const initialState = {
         titulo: 'SQlServer',
         image: './assets/images/sqlserver.png',
         lanzamiento: '04 de julio de 2021',
-        clasificacion: 'taller',
+        clasificacion: 'curso',
         duracion: 4,
         Nivel: 'intermedio',
         descripcionC: 'Lorem 10',
