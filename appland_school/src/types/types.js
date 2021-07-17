@@ -10,7 +10,9 @@ export const types = {
 
     orderChange: '[order] Order Change',
     filterChange: '[filter] Filter Change',
-    buscarChange: '[buscar] Buscar Change'
+    buscarChange: '[buscar] Buscar Change',
+
+    cursosLoad: '[cursos] Load Cursos',
 }
 export const typesSearch = {
     orderDefault: '[order] Default',

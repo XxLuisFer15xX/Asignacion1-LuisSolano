@@ -12,14 +12,20 @@ import {firebase} from "../config/firebaseConfig";
 import { useDispatch } from 'react-redux'
 import { login } from "../Redux/actions/auth";
 
+import { loadCursos } from '../Redux/helpers/loadCursos';
+import { setCursos } from '../Redux/actions/cursos';
+
 export const AppRouters = () => {
   const dispatch = useDispatch();
-
+  
   const [cheking, setCheking] = useState(true)
   const [isLoggedIn, setIsLoggedIn] = useState(false)
-
+  
+  
   useEffect(() => {
-    firebase.auth().onAuthStateChanged( (user) => {
+    firebase.auth().onAuthStateChanged( async(user) => {
+      dispatch( setCursos(await loadCursos() ) );
+
       if(user?.uid){
         dispatch( login( user.uid, user.displayName, user.photoURL) );
         setIsLoggedIn(true);

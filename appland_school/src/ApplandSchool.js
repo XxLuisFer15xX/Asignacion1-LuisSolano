@@ -9,8 +9,9 @@ import { store } from './Redux/store/store';
 import "./css/index.css";
 import "./css/elementos.css";
 
+
 export const ApplandSchool = () => {
-  
+
   return (
     <Provider store={ store} >
       <AppRouters />
