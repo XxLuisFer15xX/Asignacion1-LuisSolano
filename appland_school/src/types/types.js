@@ -13,6 +13,7 @@ export const types = {
     buscarChange: '[buscar] Buscar Change',
 
     cursosLoad: '[cursos] Load Cursos',
+    comentariosLoad: '[comentarios] Load Comentarios',
 }
 export const typesSearch = {
     orderDefault: '[order] Default',

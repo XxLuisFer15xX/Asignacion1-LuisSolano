@@ -14,6 +14,8 @@ import { login } from "../Redux/actions/auth";
 
 import { loadCursos } from '../Redux/helpers/loadCursos';
 import { setCursos } from '../Redux/actions/cursos';
+import { loadComentarios } from "../Redux/helpers/loadComentarios";
+import { setComentarios } from "../Redux/actions/comentarios";
 
 export const AppRouters = () => {
   const dispatch = useDispatch();
@@ -24,6 +26,8 @@ export const AppRouters = () => {
   
   useEffect(() => {
     firebase.auth().onAuthStateChanged( async(user) => {
+      /* console.log(await loadComentarios()); */
+      dispatch( setComentarios(await loadComentarios()) );
       dispatch( setCursos(await loadCursos() ) );
 
       if(user?.uid){

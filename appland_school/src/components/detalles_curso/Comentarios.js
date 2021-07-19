@@ -10,7 +10,7 @@ export const Comentarios = () => {
   let idCurso = history.location.pathname.split("/")[2];
   const curso = cursos.find((curso) => curso.id === idCurso);
 
-  console.log("curso: ", curso);
+  /* console.log("curso: ", curso); */
   /* console.log("comentarios: ", comentarios); */
   return (
     <>
