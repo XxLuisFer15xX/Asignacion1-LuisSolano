@@ -65,7 +65,7 @@ export const Detalles = () => {
               </div>
               <div className="detalles_duracion">
                 <span>Duración:</span>
-                <p>{duracion}</p>
+                <p>{duracion} horas</p>
               </div>
               <div className="detalles_nivel">
                 <span>Nivel:</span>

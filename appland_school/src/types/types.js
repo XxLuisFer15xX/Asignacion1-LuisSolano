@@ -14,6 +14,7 @@ export const types = {
 
     cursosLoad: '[cursos] Load Cursos',
     comentariosLoad: '[comentarios] Load Comentarios',
+    comentariosNew: '[comentarios] New Comentario',
 }
 export const typesSearch = {
     orderDefault: '[order] Default',

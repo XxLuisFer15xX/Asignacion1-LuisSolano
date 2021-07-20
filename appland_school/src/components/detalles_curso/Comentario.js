@@ -8,12 +8,6 @@ export const Comentario = (props) => {
     comentario,
     calificacion,
   } = props.comentario;
-  /* console.log(
-    id,
-    name,
-    image,
-    comentario,
-    calificacion); */
 
   let rowsCalification = [];
   for (let i = 0; i < calificacion; i++) {
