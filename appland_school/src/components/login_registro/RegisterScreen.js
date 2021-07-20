@@ -1,10 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import "../../css/login_registro/login_registro.css";
+import { startGoogleLogin } from "../../Redux/actions/auth";
 
 export const RegistroScreen = () => {
   let history = useHistory();
+  const dispatch = useDispatch();
 
   const handleLogin = () => {
     history.replace("/login");
@@ -15,8 +18,7 @@ export const RegistroScreen = () => {
     history.replace("/");
   };
   const handleGoogle = () => {
-    
-    history.replace("/");
+    dispatch( startGoogleLogin() );
   };
   const handleFacebook = () => {
     

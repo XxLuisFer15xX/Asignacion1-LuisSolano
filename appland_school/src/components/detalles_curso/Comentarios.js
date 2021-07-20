@@ -42,31 +42,33 @@ export const Comentarios = () => {
   
   const handleSubmit = async (e) =>{
     e.preventDefault();
-    console.log(formState.comentarValue);
-    console.log(calificationRef.current.querySelectorAll('.start-filled').length );
+    if (!userName) {
+      history.push("/login")
+    }else{
+      let newComent = {
+        idCurso: idCurso,
+        name: userName,
+        image: userPhoto,
+        comentario: formState.comentarValue,
+        calificacion: 1
+      }
+  
+      const doc = await db.collection('Comentarios').add ( newComent );
+      
+      newComent = {
+        id: doc.id,
+        idCurso: idCurso,
+        name: userName,
+        image: userPhoto,
+        comentario: formState.comentarValue,
+        calificacion: 1
+      }
+      dispatch( newComentario(newComent) );
+      setFormState({
+        comentarValue: ''
+      });
 
-    let newComent = {
-      idCurso: idCurso,
-      name: userName,
-      image: userPhoto,
-      comentario: formState.comentarValue,
-      calificacion: 1
     }
-
-    const doc = await db.collection('Comentarios').add ( newComent );
-    
-    newComent = {
-      id: doc.id,
-      idCurso: idCurso,
-      name: userName,
-      image: userPhoto,
-      comentario: formState.comentarValue,
-      calificacion: 1
-    }
-    dispatch( newComentario(newComent) );
-    setFormState({
-      comentarValue: ''
-    });
   }
 
   const handleStart = (e) =>{
