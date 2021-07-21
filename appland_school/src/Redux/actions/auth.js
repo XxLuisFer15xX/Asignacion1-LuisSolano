@@ -1,10 +1,23 @@
-import { firebase, googleAuthProvider } from "../../config/firebaseConfig";
+import { facebookAuthProvider, firebase, googleAuthProvider } from "../../config/firebaseConfig";
 import { types } from "../../types/types";
 
 export const startGoogleLogin = () => {
     return ( dispatch ) => {
 
         firebase.auth().signInWithPopup( googleAuthProvider )
+            .then( ({ user }) => {
+                dispatch(
+                    login( user.uid, user.displayName, user.photoURL )
+                )
+            });
+
+    }
+}
+
+export const startFacebookLogin = () => {
+    return ( dispatch ) => {
+
+        firebase.auth().signInWithPopup( facebookAuthProvider )
             .then( ({ user }) => {
                 dispatch(
                     login( user.uid, user.displayName, user.photoURL )

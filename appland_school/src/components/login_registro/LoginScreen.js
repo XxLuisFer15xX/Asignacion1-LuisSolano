@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux"
-import { startGoogleLogin } from "../../Redux/actions/auth";
+import { startFacebookLogin, startGoogleLogin } from "../../Redux/actions/auth";
 
 import "../../css/login_registro/login_registro.css";
 
@@ -23,8 +23,7 @@ export const LoginScreen = () => {
     dispatch( startGoogleLogin() );
   };
   const handleFacebook = () => {
-    
-    history.replace("/");
+    dispatch( startFacebookLogin() );
   };
   return (
     <main className="body-2">
