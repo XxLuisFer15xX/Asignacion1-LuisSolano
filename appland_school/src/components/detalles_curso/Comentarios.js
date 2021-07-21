@@ -11,8 +11,10 @@ export const Comentarios = () => {
   const { comentarios } = useSelector((state) => state.comentarios);
   const { name: userName, photo: userPhoto } = useSelector((state) => state.auth)
   let history = useHistory();
-  let idCurso = history.location.pathname.split("/")[2];
-  const curso = cursos.find((curso) => curso.id === idCurso);
+  
+  let acronimo = history.location.pathname.split("/")[2];
+  const curso = cursos.find((curso) => curso.acronimo === acronimo);
+  let idCurso = curso.id;
 
   const calificationRef = useRef(true);
   const startRef1 = useRef(true);
@@ -20,9 +22,6 @@ export const Comentarios = () => {
   const startRef3 = useRef(true);
   const startRef4 = useRef(true);
   const startRef5 = useRef(true);
-
-  /* console.log("curso: ", curso); */
-  /* console.log("comentarios: ", comentarios); */
 
   const [formState, setFormState] = useState({
     comentarValue: ''
@@ -155,7 +154,7 @@ export const Comentarios = () => {
         <div className="comentarios_comentarios">
           {
             comentarios.map(comentario => {
-              if(comentario.idCurso === curso.id){
+              if(comentario.idCurso === idCurso){
                 return <Comentario key={comentario.id} comentario={comentario} />
               }else{
                 return null;

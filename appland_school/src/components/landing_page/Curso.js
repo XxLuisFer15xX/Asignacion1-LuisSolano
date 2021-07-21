@@ -7,6 +7,7 @@ export const Curso = ({ curso }) => {
   let history = useHistory();
   const {
     id,
+    acronimo,
     titulo,
     image,
     descripcionC,
@@ -37,7 +38,7 @@ export const Curso = ({ curso }) => {
   }
 
   const handleImageClick = () => {
-    history.push(`/cursos/${id}`);
+    history.push(`/cursos/${acronimo}`);
   };
 
   return (

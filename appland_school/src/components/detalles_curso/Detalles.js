@@ -7,9 +7,10 @@ export const Detalles = () => {
   const { cursos } = useSelector((state) => state.cursos);
   let { comentarios } = useSelector((state) => state.comentarios);
   let history = useHistory();
-  let id = history.location.pathname.split("/")[2];
+  let acronimo = history.location.pathname.split("/")[2];
   
   const {
+    id,
     titulo,
     image,
     lanzamiento,
@@ -19,7 +20,7 @@ export const Detalles = () => {
     descripcionC,
     descripcionL,
     palabrasClaves,
-  } = cursos.find((curso) => curso.id === id);
+  } = cursos.find((curso) => curso.acronimo === acronimo);
   
   comentarios = comentarios.filter(c => c.idCurso === id);
   let calificacion = 0;
