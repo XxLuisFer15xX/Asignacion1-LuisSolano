@@ -5,9 +5,10 @@ import { useSelector } from "react-redux";
 
 export const Detalles = () => {
   const { cursos } = useSelector((state) => state.cursos);
+  let { comentarios } = useSelector((state) => state.comentarios);
   let history = useHistory();
   let id = history.location.pathname.split("/")[2];
-
+  
   const {
     titulo,
     image,
@@ -18,8 +19,17 @@ export const Detalles = () => {
     descripcionC,
     descripcionL,
     palabrasClaves,
-    calificacion,
   } = cursos.find((curso) => curso.id === id);
+  
+  comentarios = comentarios.filter(c => c.idCurso === id);
+  let calificacion = 0;
+  for (let i = 0; i < comentarios.length; i++) {
+    calificacion = calificacion + comentarios[i].calificacion
+  }
+  if (calificacion !== 0){
+    calificacion = Math.round(calificacion / comentarios.length);
+  }
+  
 
   let rowsCalification = [];
   for (let i = 0; i < calificacion; i++) {

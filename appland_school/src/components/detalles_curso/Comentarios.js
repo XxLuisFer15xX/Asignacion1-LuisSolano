@@ -41,6 +41,7 @@ export const Comentarios = () => {
   }
   
   const handleSubmit = async (e) =>{
+    const calificacionValue = calificationRef.current.querySelectorAll('.start-filled').length;
     e.preventDefault();
     if (!userName) {
       history.push("/login")
@@ -50,7 +51,7 @@ export const Comentarios = () => {
         name: userName,
         image: userPhoto,
         comentario: formState.comentarValue,
-        calificacion: 1
+        calificacion: calificacionValue
       }
   
       const doc = await db.collection('Comentarios').add ( newComent );
@@ -61,7 +62,7 @@ export const Comentarios = () => {
         name: userName,
         image: userPhoto,
         comentario: formState.comentarValue,
-        calificacion: 1
+        calificacion: calificacionValue
       }
       dispatch( newComentario(newComent) );
       setFormState({
@@ -165,7 +166,10 @@ export const Comentarios = () => {
         <hr />
 
         <div className="comentarios_comentario">
-          <img src={`./assets/images/perfil.jpg`} alt="" />
+          <img src={userPhoto
+            ? userPhoto
+            : `./assets/images/user.jpg`
+          } alt="" />
           <div className="comentarios_caja">
             <input 
               className="textbox" 
@@ -180,7 +184,7 @@ export const Comentarios = () => {
               <img ref={startRef2} id="start-2" className="start-filled" src={`./assets/icons/star-filled.svg`} alt="" onClick={handleStart} />
               <img ref={startRef3} id="start-3" className="start-filled" src={`./assets/icons/star-filled.svg`} alt="" onClick={handleStart} />
               <img ref={startRef4} id="start-4" className="start-filled" src={`./assets/icons/star-filled.svg`} alt="" onClick={handleStart} />
-              <img ref={startRef5} id="start-5" className="start-empty" src={`./assets/icons/star-empty.svg`} alt="" onClick={handleStart} />
+              <img ref={startRef5} id="start-5" className="start-filled" src={`./assets/icons/star-filled.svg`} alt="" onClick={handleStart} />
             </div>
           </div>
         </div>
