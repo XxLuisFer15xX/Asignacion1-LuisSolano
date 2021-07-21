@@ -1,10 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { db } from "../../config/firebaseConfig";
-import { newComentario } from "../../Redux/actions/comentarios";
 import { Comentario } from "./Comentario";
 import { useDispatch } from 'react-redux'
+import { db } from "../../config/firebaseConfig";
+import { newComentario } from "../../Redux/actions/comentarios";
+
+// import { upLoadCursos } from "../../Redux/helpers/uploadCursos";
+
 export const Comentarios = () => {
   const dispatch = useDispatch();
   const { cursos } = useSelector((state) => state.cursos);
@@ -41,10 +44,14 @@ export const Comentarios = () => {
   
   const handleSubmit = async (e) =>{
     const calificacionValue = calificationRef.current.querySelectorAll('.start-filled').length;
+    
+    // console.log(calificacionValue)
+    // upLoadCursos();
+
     e.preventDefault();
     if (!userName) {
       history.push("/login")
-    }else{
+    }else if (formState.comentarValue.trim().length > 0) {
       let newComent = {
         idCurso: idCurso,
         name: userName,
@@ -67,7 +74,6 @@ export const Comentarios = () => {
       setFormState({
         comentarValue: ''
       });
-
     }
   }
 

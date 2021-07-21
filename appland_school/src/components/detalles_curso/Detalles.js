@@ -45,7 +45,7 @@ export const Detalles = () => {
   }
 
   const handlePrevisualizar = () =>{
-    history.push(`${id}/previsualizar`)
+    history.push(`${acronimo}/previsualizar`)
   }
 
   return (
