@@ -1,15 +1,14 @@
-import { db } from "../../config/firebaseConfig"
-
 export const loadComentarios = async () => {
-    const comentariosSnap = await db.collection(`Comentarios`).get();
-    const comentarios = [];
-    
-    comentariosSnap.forEach( snapHijo => {
-        comentarios.push({
-            id: snapHijo.id,
-            ...snapHijo.data()
-        })
+    const url = `https://us-central1-applandschool.cloudfunctions.net/app/api/get/comentarios`
+    const resp = await fetch( url, {
+        headers: {
+            'Authorization': 'Bearer ',
+            'Content-Type': 'application/json'
+        },
+        method:'GET',
+        dataType: 'json'
     });
+    const data = await resp.json();
 
-    return comentarios
+    return data;
 }

@@ -12,7 +12,7 @@ export const Comentarios = () => {
   const dispatch = useDispatch();
   const { cursos } = useSelector((state) => state.cursos);
   const { comentarios } = useSelector((state) => state.comentarios);
-  const { name: userName, photo: userPhoto } = useSelector((state) => state.auth)
+  const { uid:userId, name: userName, photo: userPhoto } = useSelector((state) => state.auth)
   let history = useHistory();
   
   let acronimo = history.location.pathname.split("/")[2];
@@ -49,11 +49,14 @@ export const Comentarios = () => {
     // upLoadCursos();
 
     e.preventDefault();
+    
+    const countComentariosUser = comentarios.filter(com => com.idCurso === idCurso && com?.idUser === userId).length;
     if (!userName) {
       history.push("/login")
-    }else if (formState.comentarValue.trim().length > 0) {
+    }else if (formState.comentarValue.trim().length > 0 && countComentariosUser === 0) {
       let newComent = {
         idCurso: idCurso,
+        idUser: userId,
         name: userName,
         image: userPhoto,
         comentario: formState.comentarValue,
@@ -65,6 +68,7 @@ export const Comentarios = () => {
       newComent = {
         id: doc.id,
         idCurso: idCurso,
+        idUser: userId,
         name: userName,
         image: userPhoto,
         comentario: formState.comentarValue,

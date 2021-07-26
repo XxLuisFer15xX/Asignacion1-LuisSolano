@@ -67,7 +67,7 @@ export const Buscador = () => {
           >
             <option value={typesSearch.filterDefault}>Filtrar por</option>
             <option value={typesSearch.filterName}>Nombre</option>
-            <option value={typesSearch.filterCategory}>Categoria</option>
+            <option value={typesSearch.filterCategory}>Clasificacion</option>
             <option value={typesSearch.filterKeywords}>Palabras Claves</option>
           </select>
         </div>
@@ -80,6 +80,7 @@ export const Buscador = () => {
             name="busquedaValue"
             value={ busquedaValue }
             onChange={ handleInputChange }
+            maxLength = "255"
           />
         </div>
       </div>

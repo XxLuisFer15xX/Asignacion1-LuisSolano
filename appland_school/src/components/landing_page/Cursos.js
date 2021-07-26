@@ -10,7 +10,7 @@ export const Cursos = () => {
   const { buscador } = useSelector(state => state);
   let cursosFiltrados = [{}];
 
-  if(buscador.palabras){
+  if(buscador.palabras &&  buscador.palabras.length >= 3){
     switch (buscador.filtrar) {
       case typesSearch.filterDefault:
       case typesSearch.filterName:
@@ -86,7 +86,7 @@ export const Cursos = () => {
         if (ordenarA > ordenarB) {
           return -1;
         }
-        if (ordenarA > ordenarB) {
+        if (ordenarA < ordenarB) {
           return 1;
         }
         return 0;
